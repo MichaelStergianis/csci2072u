@@ -1,0 +1,364 @@
+>>> q1 = np.array([.5, .5, .5, .5])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'np' is not defined
+>>> import numpy as np
+>>> q1 = np.array([.5, .5, .5, .5])
+>>> v4 = np.array([0, 1., 0, 0])
+>>> np.dot(q1, v4)
+0.5
+>>> print(q1*.5)
+[ 0.25  0.25  0.25  0.25]
+>>> sqrt(5)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'sqrt' is not defined
+>>> np.sqrt(5)
+2.2360679774997898
+>>> w2 = np.array([-3/2, -1/2, 1/2, 3/2,])
+>>> q2 = w2 / (np.dot(w2, w2))
+>>> print(q2)
+[-0.3 -0.1  0.1  0.3]
+>>> np.len
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: module 'numpy' has no attribute 'len'
+>>> np.dot(w2, w2)
+5.0
+>>> q2 = w2 / np.sqrt((np.dot(w2, w2)))
+>>> print(q2)
+[-0.67082039 -0.2236068   0.2236068   0.67082039]
+>>> -3 / 2 / np.sqrt(5)
+-0.67082039324993692
+>>> q1
+array([ 0.5,  0.5,  0.5,  0.5])
+>>> q2
+array([-0.67082039, -0.2236068 ,  0.2236068 ,  0.67082039])
+>>> q1*v4
+array([ 0. ,  0.5,  0. ,  0. ])
+>>> v4
+array([ 0.,  1.,  0.,  0.])
+>>> np.dot(q1, v4)*q1
+array([ 0.25,  0.25,  0.25,  0.25])
+>>> int1 = np.dot(q1, v4)*q1
+>>> int2 = np.dot(q2, v4)*q2
+>>> print(int2)
+[ 0.15  0.05 -0.05 -0.15]
+>>> int3 = int1 + int2
+>>> print(v4 - int3)
+[-0.4  0.7 -0.2 -0.1]
+>>> v4star = (v4 - int3)
+>>> print(int3)
+[ 0.4  0.3  0.2  0.1]
+>>> print(int1)
+[ 0.25  0.25  0.25  0.25]
+>>> print(int2)
+[ 0.15  0.05 -0.05 -0.15]
+>>> print(int1 + int2)
+[ 0.4  0.3  0.2  0.1]
+>>> q3
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'q3' is not defined
+>>> w3
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'w3' is not defined
+>>> w3 = np.array([.3, -.4, -.1, .2])
+>>> q3 = np.sqrt(10.0/3)*w3
+>>> print(q3)
+[ 0.54772256 -0.73029674 -0.18257419  0.36514837]
+>>> print(w3)
+[ 0.3 -0.4 -0.1  0.2]
+>>> np.dot(q3, v4star)
+-0.73029674334022154
+>>> np.dot(q3, v4star)*q3
+array([-0.4       ,  0.53333333,  0.13333333, -0.26666667])
+>>> w4 = v4star - (np.dot(q3, v4star)*q3)
+>>> print(w4)
+[ 0.          0.16666667 -0.33333333  0.16666667]
+>>> q4 = w4 / (np.sqrt(np.dot(w4, w4)))
+>>> print q4
+  File "<stdin>", line 1
+    print q4
+           ^
+SyntaxError: Missing parentheses in call to 'print'
+>>> print( q4)
+[ 0.          0.40824829 -0.81649658  0.40824829]
+>>> print(np.sqrt(np.dot(w4, w4)))
+0.408248290464
+>>> np.dot(w4, w4)
+0.16666666666666666
+>>> q4
+array([ 0.        ,  0.40824829, -0.81649658,  0.40824829])
+>>> w4
+array([ 0.        ,  0.16666667, -0.33333333,  0.16666667])
+>>> q1
+array([ 0.5,  0.5,  0.5,  0.5])
+>>> q2
+array([-0.67082039, -0.2236068 ,  0.2236068 ,  0.67082039])
+>>> q3
+array([ 0.54772256, -0.73029674, -0.18257419,  0.36514837])
+>>> q4
+array([ 0.        ,  0.40824829, -0.81649658,  0.40824829])
+>>> q1*q2
+array([-0.3354102, -0.1118034,  0.1118034,  0.3354102])
+>>> np.dot(q1,q2)
+0.0
+>>> np.dot(q1,q3)
+-2.7755575615628914e-17
+>>> np.dot(q1,q4)
+-1.9428902930940239e-16
+>>> np.dot(q2,q4)
+1.6653345369377348e-16
+>>> np.dot(q2,q3)
+8.3266726846886741e-17
+>>> np.dot(q3,q4)
+3.6082248300317588e-16
+>>> np.dot(w1, w1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'w1' is not defined
+>>> w2
+array([-1.5, -0.5,  0.5,  1.5])
+>>> w1 = np.array([1., 1., 1., 1.])
+>>> v1 = np.array([1., 1., 1., 1.])
+>>> np.sqrt(np.dot(w1, w1))
+2.0
+>>> np.norm(w1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: module 'numpy' has no attribute 'norm'
+>>> np.linalg.norm(w1)
+2.0
+>>> np.sqrt(np.dot(w2, w2))
+2.2360679774997898
+>>> np.linalg.norm(w2)
+2.2360679774997898
+>>> np.sqrt(1/6)
+0.40824829046386302
+>>> np.linalg.norm(w4)
+0.40824829046386302
+>>> np.dot(q1, v2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'v2' is not defined
+>>> v2 = np.array([1., 2., 3., 4.])
+>>> v3
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'v3' is not defined
+>>> v3 = np.array([1., 0, 0, 0])
+>>> v4 = np.array([0, 1., 0, 0])
+>>> v1
+array([ 1.,  1.,  1.,  1.])
+>>> v2
+array([ 1.,  2.,  3.,  4.])
+>>> v3
+array([ 1.,  0.,  0.,  0.])
+>>> v4
+array([ 0.,  1.,  0.,  0.])
+>>> np.dot(q1, v2)
+5.0
+>>> np.dot(q1, v3)
+0.5
+>>> np.dot(q1, v4)
+0.5
+>>> np.dot(q2, v4)
+-0.22360679774997896
+>>> np.sqrt(1/20)
+0.22360679774997896
+>>> np.dot(q2, v3)
+\-0.67082039324993692
+>>> np.sqare
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: module 'numpy' has no attribute 'sqare'
+>>> np.dot(q2, v3) ** 2
+0.45000000000000001
+>>> np.dot(q3, v4)
+-0.73029674334022154
+>>> np.dot(q3, v4) ** 2
+0.53333333333333344
+>>> np.dot(q3, v4) ** 3
+-0.3894915964481182
+>>> np.dot(q3, v4) ** 4
+0.28444444444444456
+>>> np.dot(q3, v4)
+-0.73029674334022154
+>>> Q = np.concatenate(q1, q2,q3,q4)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: function takes at most 2 arguments (4 given)
+>>> Q = np.concatenate((q1, q2,q3,q4))
+>>> Q
+array([ 0.5       ,  0.5       ,  0.5       ,  0.5       , -0.67082039,
+       -0.2236068 ,  0.2236068 ,  0.67082039,  0.54772256, -0.73029674,
+       -0.18257419,  0.36514837,  0.        ,  0.40824829, -0.81649658,
+        0.40824829])
+>>> Q = np.concatenate((q1.T, q2.T,q3.T,q4.T))
+>>> Q
+array([ 0.5       ,  0.5       ,  0.5       ,  0.5       , -0.67082039,
+       -0.2236068 ,  0.2236068 ,  0.67082039,  0.54772256, -0.73029674,
+       -0.18257419,  0.36514837,  0.        ,  0.40824829, -0.81649658,
+        0.40824829])
+>>> Q = np.concatenate((q1.T, q2.T,q3.T,q4.T), axis=1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: axis 1 out of bounds [0, 1)
+>>> Q = np.concatenate((q1.T, q2.T,q3.T,q4.T), axis=0)
+>>> Q
+array([ 0.5       ,  0.5       ,  0.5       ,  0.5       , -0.67082039,
+       -0.2236068 ,  0.2236068 ,  0.67082039,  0.54772256, -0.73029674,
+       -0.18257419,  0.36514837,  0.        ,  0.40824829, -0.81649658,
+        0.40824829])
+>>> q1.T
+array([ 0.5,  0.5,  0.5,  0.5])
+>>> q1.reshape(1, 0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: total size of new array must be unchanged
+>>> q1.reshape(4, 1)
+array([[ 0.5],
+       [ 0.5],
+       [ 0.5],
+       [ 0.5]])
+>>> q2.reshape(4,1)
+array([[-0.67082039],
+       [-0.2236068 ],
+       [ 0.2236068 ],
+       [ 0.67082039]])
+>>> q2
+array([-0.67082039, -0.2236068 ,  0.2236068 ,  0.67082039])
+>>> Q = np.concatenate((q1.reshape(4,1), q2.reshape(4,1), q3.reshape(4,1), q4.reshape(4,1)))
+>>> Q
+array([[ 0.5       ],
+       [ 0.5       ],
+       [ 0.5       ],
+       [ 0.5       ],
+       [-0.67082039],
+       [-0.2236068 ],
+       [ 0.2236068 ],
+       [ 0.67082039],
+       [ 0.54772256],
+       [-0.73029674],
+       [-0.18257419],
+       [ 0.36514837],
+       [ 0.        ],
+       [ 0.40824829],
+       [-0.81649658],
+       [ 0.40824829]])
+>>> Q = np.concatenate((q1.reshape(4,1), q2.reshape(4,1), q3.reshape(4,1), q4.reshape(4,1)), axis=1)
+>>> Q
+array([[ 0.5       , -0.67082039,  0.54772256,  0.        ],
+       [ 0.5       , -0.2236068 , -0.73029674,  0.40824829],
+       [ 0.5       ,  0.2236068 , -0.18257419, -0.81649658],
+       [ 0.5       ,  0.67082039,  0.36514837,  0.40824829]])
+>>> r1
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'r1' is not defined
+>>> r11
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'r11' is not defined
+>>> R = np.array([[3., 5., .5, .5], [0, np.sqrt(5), -1*np.sqrt(9/20), -1*sqrt(1/20)],[0,0,np.sqrt(3/10),-1*np.sqrt(16/30)],[0,0,0,np.sqrt(1/6)]])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'sqrt' is not defined
+>>> R = np.array([[3., 5., .5, .5], [0, np.sqrt(5), -1*np.sqrt(9/20), -1*np.sqrt(1/20)],[0,0,np.sqrt(3/10),-1*np.sqrt(16/30)],[0,0,0,np.sqrt(1/6)]])
+>>> R
+array([[ 3.        ,  5.        ,  0.5       ,  0.5       ],
+       [ 0.        ,  2.23606798, -0.67082039, -0.2236068 ],
+       [ 0.        ,  0.        ,  0.54772256, -0.73029674],
+       [ 0.        ,  0.        ,  0.        ,  0.40824829]])
+>>> R = np.array([[2., 5., .5, .5], [0, np.sqrt(5), -1*np.sqrt(9/20), -1*np.sqrt(1/20)],[0,0,np.sqrt(3/10),-1*np.sqrt(16/30)],[0,0,0,np.sqrt(1/6)]])
+>>> R
+array([[ 2.        ,  5.        ,  0.5       ,  0.5       ],
+       [ 0.        ,  2.23606798, -0.67082039, -0.2236068 ],
+       [ 0.        ,  0.        ,  0.54772256, -0.73029674],
+       [ 0.        ,  0.        ,  0.        ,  0.40824829]])
+>>> Q*R
+array([[ 1.        , -3.35410197,  0.27386128,  0.        ],
+       [ 0.        , -0.5       ,  0.48989795, -0.09128709],
+       [ 0.        ,  0.        , -0.1       ,  0.59628479],
+       [ 0.        ,  0.        ,  0.        ,  0.16666667]])
+>>> R*Q
+array([[ 1.        , -3.35410197,  0.27386128,  0.        ],
+       [ 0.        , -0.5       ,  0.48989795, -0.09128709],
+       [ 0.        ,  0.        , -0.1       ,  0.59628479],
+       [ 0.        ,  0.        ,  0.        ,  0.16666667]])
+>>> QR
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'QR' is not defined
+>>> np.dot(Q, R)
+array([[  1.00000000e+00,   1.00000000e+00,   1.00000000e+00,
+          5.55111512e-17],
+       [  1.00000000e+00,   2.00000000e+00,   0.00000000e+00,
+          1.00000000e+00],
+       [  1.00000000e+00,   3.00000000e+00,   0.00000000e+00,
+          0.00000000e+00],
+       [  1.00000000e+00,   4.00000000e+00,   0.00000000e+00,
+          5.55111512e-17]])
+>>> np.dot(Q, R)
+array([[  1.00000000e+00,   1.00000000e+00,   1.00000000e+00,
+          5.55111512e-17],
+       [  1.00000000e+00,   2.00000000e+00,   0.00000000e+00,
+          1.00000000e+00],
+       [  1.00000000e+00,   3.00000000e+00,   0.00000000e+00,
+          0.00000000e+00],
+       [  1.00000000e+00,   4.00000000e+00,   0.00000000e+00,
+          5.55111512e-17]])
+>>> Anot = np.dot(Q, R)
+>>> Anot
+array([[  1.00000000e+00,   1.00000000e+00,   1.00000000e+00,
+          5.55111512e-17],
+       [  1.00000000e+00,   2.00000000e+00,   0.00000000e+00,
+          1.00000000e+00],
+       [  1.00000000e+00,   3.00000000e+00,   0.00000000e+00,
+          0.00000000e+00],
+       [  1.00000000e+00,   4.00000000e+00,   0.00000000e+00,
+          5.55111512e-17]])
+>>> b
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'b' is not defined
+>>> b = np.array([145, 270, 400, 510])
+>>> b.reshape(4, 1)
+array([[145],
+       [270],
+       [400],
+       [510]])
+>>> b = b.reshape(4, 1)
+>>> d = np.dot(Q.T, b)
+>>> d
+array([[ 662.5       ],
+       [ 273.91832724],
+       [  -4.56435465],
+       [  -8.16496581]])
+>>> R
+array([[ 2.        ,  5.        ,  0.5       ,  0.5       ],
+       [ 0.        ,  2.23606798, -0.67082039, -0.2236068 ],
+       [ 0.        ,  0.        ,  0.54772256, -0.73029674],
+       [ 0.        ,  0.        ,  0.        ,  0.40824829]])
+>>> R**2
+array([[  4.        ,  25.        ,   0.25      ,   0.25      ],
+       [  0.        ,   5.        ,   0.45      ,   0.05      ],
+       [  0.        ,   0.        ,   0.3       ,   0.53333333],
+       [  0.        ,   0.        ,   0.        ,   0.16666667]])
+>>> d
+array([[ 662.5       ],
+       [ 273.91832724],
+       [  -4.56435465],
+       [  -8.16496581]])
+>>> d[1]
+array([ 273.91832724])
+>>> d[1][0]
+273.91832724372426
+>>> d[1][0] / np.sqrt(5)
+122.5
+>>> b1 = d[1][0] / np.sqrt(5)
+>>> a1 = (662.5 - 5*b1) / 2
+>>> a1
+25.0
